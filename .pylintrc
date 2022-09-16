@@ -1,0 +1,18 @@
+[MESSAGES CONTROL]
+
+disable=missing-docstring,
+        bad-continuation,
+        too-few-public-methods,
+        too-many-arguments,
+        duplicate-code,
+        fixme,
+        invalid-name,
+        wrong-input-order
+
+jobs=0
+ignored-modules=pyspark.sql.functions
+ignore-patterns=test_.*.py
+
+[FORMAT]
+max-line-length=125
+max-attributes=12
