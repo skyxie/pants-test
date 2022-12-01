@@ -14,14 +14,14 @@
     pip install pytest
     PYTHONPATH=src pytest test/test_my_module.py 
 
-**Expected**: :white-checkmark:
+**Expected**: :white_check_mark:
 
-**Actual**: :white-checkmark:
+**Actual**: :white_check_mark:
 
 ## Running with pants
 
     ./pants fmt lint check test ::
 
-**Expected**: :white-checkmark:
+**Expected**: :white_check_mark:
 
 **Actual**: :x:
