@@ -10,7 +10,7 @@ backend_packages = [
 ]
 
 [python]
-interpreter_constraints = ["CPython>=3.8.*,<3.9"]
+interpreter_constraints = ["CPython>=3.8.*"]
 enable_resolves = true
 
 [python.resolves]
@@ -20,12 +20,12 @@ my_module = "build-support/my_module.txt"
 indexes.add = ["%(env.PIP_EXTRA_INDEX_URL)s"]
 
 [black]
-interpreter_constraints = ["CPython>=3.8.*,<3.9"]
+interpreter_constraints = ["CPython>=3.8.*"]
 lockfile = "build-support/black.lockfile"
 version = "black==22.3.0"
 
 [mypy]
-interpreter_constraints = ["CPython>=3.8.*,<3.9"]
+interpreter_constraints = ["CPython>=3.8.*"]
 extra_type_stubs = ["types-PyYAML", "pandas-stubs"]
 lockfile = "build-support/mypy.lockfile"
 
