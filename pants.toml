@@ -11,10 +11,6 @@ backend_packages = [
 
 [python]
 interpreter_constraints = ["CPython>=3.8.*"]
-enable_resolves = true
-
-[python.resolves]
-my_module = "build-support/my_module.txt"
 
 [python-repos]
 indexes.add = ["%(env.PIP_EXTRA_INDEX_URL)s"]
