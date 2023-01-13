@@ -15,3 +15,9 @@ python_tests(
     sources=["test_module_c.py"],
     dependencies=["src:module_c"],
 )
+
+python_tests(
+    name="module_d",
+    sources=["test_module_d.py"],
+    dependencies=["src:module_d"],
+)
