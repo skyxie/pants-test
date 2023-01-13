@@ -21,3 +21,15 @@ python_sources(
     sources=["module_d/*.py"],
     dependencies=[":module_a"],
 )
+
+python_distribution(
+    name="dist_c",
+    dependencies=[":module_c"],
+    wheel=True,
+    sdist=True,
+    provides=setup_py(
+        name="pants-test-c",
+        version="0.1.0",
+        description="Just a stoopid test",
+    ),
+)
