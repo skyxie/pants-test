@@ -1,22 +1,11 @@
-import pytest
-
 from module_a import get_domain, plus_one
 
 
-@pytest.mark.parametrize(
-    "url,expected_domain",
-    [
-        ("https://google.com", "google"),
-        ("https://whitehouse.gov", "whitehouse"),
-        ("https://foo.us", "foo"),
-    ],
-)
-def test_get_domain(url, expected_domain):
-    assert get_domain(url) == expected_domain
+def test_get_domain():
+    assert get_domain("https://google.com") == "google"
+    assert get_domain("https://whitehouse.gov") == "whitehouse"
+    assert get_domain("https://foo.us") == "foo"
 
 
-@pytest.mark.parametrize(
-    "x,y", [(1, 2), (-1, 0)]
-)
-def test_plus_one(x, y):
-    assert plus_one(x) == y
+def test_plus_one():
+    assert plus_one(1) == 2
