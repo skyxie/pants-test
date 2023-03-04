@@ -1,4 +1,4 @@
-from module_a import get_domain, plus_one
+from module_a.dpfs import get_domain, plus_one
 
 
 def test_get_domain():
