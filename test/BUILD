@@ -1,5 +1,5 @@
 python_tests(
     name="module_b",
-    sources=["test_module_b.py"],
+    sources=["test_*.py"],
     dependencies=["src/bar/dpfs/module_b:lib"],
 )

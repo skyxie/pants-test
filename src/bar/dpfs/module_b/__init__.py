@@ -1,4 +1,4 @@
-from module_a.dpfs import plus_one
+from module_a import plus_one
 
 
 def plus_y(x: int, y: int) -> int:
