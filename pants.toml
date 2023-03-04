@@ -27,7 +27,7 @@ extra_type_stubs = ["types-PyYAML", "pandas-stubs"]
 lockfile = "build-support/mypy.lockfile"
 
 [source]
-root_patterns = ["test", "src/**/dpfs"]
+root_patterns = ["test", "src/**/modules"]
 
 [pylint]
 extra_requirements = ["pytest"]

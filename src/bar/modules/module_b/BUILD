@@ -1,5 +1,5 @@
 python_sources(
     name="lib",
     sources=["*.py"],
-    dependencies=["src/foo/dpfs/module_a:lib"],
+    dependencies=["src/foo/modules/module_a:lib"],
 )
