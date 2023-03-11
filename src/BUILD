@@ -10,16 +10,20 @@ python_sources(
     dependencies=[":module_a"],
 )
 
+python_requirement(name="reqs_c", requirements=["requests"])
+
 python_sources(
     name="module_c",
     sources=["module_c/*.py"],
-    dependencies=[":module_b"],
+    dependencies=[":module_b", ":reqs_c"],
 )
+
+python_requirement(name="reqs_d", requirements=["requests"])
 
 python_sources(
     name="module_d",
     sources=["module_d/*.py"],
-    dependencies=[":module_a"],
+    dependencies=[":module_a", ":reqs_d"],
 )
 
 python_distribution(
