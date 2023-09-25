@@ -1,11 +1,13 @@
-from module_a import get_domain, plus_one
+import pandas as pd
+
+from module_a import get_counts
 
 
-def test_get_domain():
-    assert get_domain("https://google.com") == "google"
-    assert get_domain("https://whitehouse.gov") == "whitehouse"
-    assert get_domain("https://foo.us") == "foo"
-
-
-def test_plus_one():
-    assert plus_one(1) == 2
+def test_column_names():
+    df = get_counts()
+    cols = df.columns.to_list()
+    assert "index" in cols
+    if pd.__version__.startswith("2"):
+        assert "count" in cols
+    else:
+        assert 0 in cols

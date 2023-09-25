@@ -1,25 +1,40 @@
 python_sources(
-    name="module_a",
+    name="module_a-alpha",
     sources=["module_a/*.py"],
-    dependencies=["3rdparty:reqs"],
+    dependencies=[
+        "3rdparty:reqs-alpha#pandas",
+        "3rdparty:reqs-alpha#numpy"
+    ],
+    resolve="alpha"
+)
+
+python_sources(
+    name="module_a-beta",
+    sources=["module_a/*.py"],
+    dependencies=[
+        "3rdparty:reqs-beta#pandas",
+        "3rdparty:reqs-beta#numpy",
+    ],
+    resolve="beta"
 )
 
 python_sources(
     name="module_b",
     sources=["module_b/*.py"],
-    dependencies=[":module_a"],
+    dependencies=["3rdparty:reqs-shared#pretty-tables"],
+    resolve=parametrize("alpha", "beta")
 )
 
 python_sources(
     name="module_c",
     sources=["module_c/*.py"],
-    dependencies=[":module_b"],
+    resolve="alpha"
 )
 
 python_sources(
     name="module_d",
     sources=["module_d/*.py"],
-    dependencies=[":module_a"],
+    resolve="alpha"
 )
 
 python_distribution(

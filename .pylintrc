@@ -1,16 +1,13 @@
 [MESSAGES CONTROL]
 
 disable=missing-docstring,
-        bad-continuation,
         too-few-public-methods,
         too-many-arguments,
         duplicate-code,
         fixme,
-        invalid-name,
-        wrong-input-order
+        invalid-name
 
 jobs=0
-ignored-modules=pyspark.sql.functions
 ignore-patterns=test_.*.py
 
 [FORMAT]

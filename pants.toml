@@ -1,38 +1,46 @@
 [GLOBAL]
-pants_version = "2.14.0"
+pants_version = "2.16.0"
 
 backend_packages = [
   "pants.backend.python",
   "pants.backend.python.lint.black",
   "pants.backend.python.lint.pylint",
-  "pants.backend.python.lint.isort",
   "pants.backend.python.typecheck.mypy",
 ]
 
 [python]
-interpreter_constraints = ["CPython>=3.8.*"]
+interpreter_constraints = ["CPython>=3.9.*"]
 enable_resolves = true
+
+[python.resolves]
+dev = "build-support/dev.lockfile"
+alpha = "build-support/alpha.lockfile"
+beta = "build-support/beta.lockfile"
 
 [python-repos]
 indexes.add = ["%(env.PIP_EXTRA_INDEX_URL)s"]
 
 [black]
-interpreter_constraints = ["CPython>=3.8.*"]
-lockfile = "build-support/black.lockfile"
-version = "black==22.3.0"
+interpreter_constraints = ["CPython>=3.9.*"]
+install_from_resolve = "dev"
+requirements =["//3rdparty:reqs-dev#black"]
 
 [mypy]
-interpreter_constraints = ["CPython>=3.8.*"]
-extra_type_stubs = ["types-PyYAML", "pandas-stubs"]
-lockfile = "build-support/mypy.lockfile"
+interpreter_constraints = ["CPython>=3.9.*"]
+install_from_resolve = "dev"
+requirements = [
+    "//3rdparty:reqs-dev#mypy",
+    "//3rdparty:reqs-dev#pandas-stubs",
+]
+extra_type_stubs = ["pandas-stubs"]
 
 [source]
 root_patterns = ["src", "test"]
 
 [pylint]
-extra_requirements = ["pytest"]
 config = ".pylintrc"
-lockfile = "build-support/pylint.lockfile"
+install_from_resolve = "dev"
+requirements =["//3rdparty:reqs-dev#pylint"]
 
 [test]
 output = "all"

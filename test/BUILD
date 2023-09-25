@@ -1,23 +1,37 @@
 python_tests(
-    name="module_a",
+    name="module_a-alpha",
     sources=["test_module_a.py"],
-    dependencies=["src:module_a"],
+    resolve="alpha"
 )
 
 python_tests(
-    name="module_b",
+    name="module_a-beta",
+    sources=["test_module_a.py"],
+    resolve="beta"
+)
+
+python_tests(
+    name="module_b-alpha",
     sources=["test_module_b.py"],
-    dependencies=["src:module_b"],
+    dependencies=["3rdparty:reqs-shared#pytest"],
+    resolve="alpha"
+)
+
+python_tests(
+    name="module_b-beta",
+    sources=["test_module_b.py"],
+    dependencies=["3rdparty:reqs-shared#pytest"],
+    resolve="beta"
 )
 
 python_tests(
     name="module_c",
     sources=["test_module_c.py"],
-    dependencies=["src:module_c"],
+    resolve="alpha"
 )
 
 python_tests(
     name="module_d",
     sources=["test_module_d.py"],
-    dependencies=["src:module_d"],
+    resolve="alpha"
 )

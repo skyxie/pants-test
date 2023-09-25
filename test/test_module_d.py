@@ -1,5 +1,5 @@
-from module_d import plus_two
+from module_d import COLORS
 
 
-def test_plus_two():
-    assert plus_two(1) == 3
+def test_colors():
+    assert len(COLORS) >= 3

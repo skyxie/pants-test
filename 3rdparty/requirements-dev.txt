@@ -1,0 +1,4 @@
+black==22.3.0
+mypy
+pylint[pytest]
+pandas-stubs
