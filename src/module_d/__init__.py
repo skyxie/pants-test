@@ -1,7 +1,7 @@
 import pandas as pd
 import pretty_tables
 
-from module_b import pretty_tables_params
+from module_b.params import pretty_tables_params
 from module_c import get_proportions
 
 COLORS = [
